@@ -202,7 +202,7 @@ var T={
 "الدورات التدريبية":"Training Courses","للرسم الهندسي":"For engineering drafting","للنمذجة المعمارية والإنشائية":"For architectural and structural modeling","للتحليل الإنشائي":"For structural analysis","التصميم الإنشائي اليدوي":"Manual structural design",
 "التعليم واللغات":"Education & Languages","جامعة طرابلس، كلية الهندسة، ليبيا":"University of Tripoli, Faculty of Engineering, Libya","التعليم الثانوي":"Secondary Education","مدرسة لطفية بن موسى · 2019/09":"Lutfiyya Ben Moussa School · Sep 2019",
 "اللغات":"Languages","العربية: اللغة الأم":"Arabic: native","الإنجليزية: جيد (تحدث وكتابة)":"English: good (speaking and writing)",
-"خلّينا نتواصل":"Let’s get in touch","سوق الجمعة، طرابلس، ليبيا":"Souq Al-Jumaa, Tripoli, Libya","© 2026 محمد عادل البوعيشي":"© 2026 Mohammed Adel Al-Bouaishi"};
+"للنتواصل":"Let’s get in touch","سوق الجمعة، طرابلس، ليبيا":"Souq Al-Jumaa, Tripoli, Libya","© 2026 محمد عادل البوعيشي":"© 2026 Mohammed Adel Al-Bouaishi"};
 var TITLE={ar:'محمد عادل البوعيشي — مهندس مدني',en:'Mohammed Adel Al-Bouaishi — Civil Engineer'};
 var DESC={ar:'السيرة الذاتية للمهندس محمد عادل البوعيشي، مهندس مدني خريج جامعة طرابلس: تنفيذ إنشائي، أعمال خرسانية، AutoCAD وRevit وRobot.',en:'CV of Mohammed Adel Al-Bouaishi, a civil engineer and University of Tripoli graduate: structural execution, concrete works, AutoCAD, Revit and Robot.'};
 function norm(s){return s.replace(/\s+/g,' ').trim()}
@@ -218,12 +218,11 @@ function setLang(l){lang=l;var en=l==='en';r.lang=l;r.dir=en?'ltr':'rtl';
 nodes.forEach(function(n){var o=orig.get(n);if(!en){n.nodeValue=o;return}n.nodeValue=o.match(/^\s*/)[0]+T[norm(o)]+o.match(/\s*$/)[0]});
 ael.forEach(function(e){var o=e.dataset.oal;e.setAttribute('aria-label',en&&T[norm(o)]?T[norm(o)]:o)});
 document.title=TITLE[l];var m=document.querySelector('meta[name=description]');if(m)m.content=DESC[l];
-lab();try{localStorage.setItem('lang',l)}catch(e){}}
+lab();}
 th.onclick=function(){r.setAttribute('data-theme',dark()?'light':'dark');lab()};
 lg.onclick=function(){setLang(lang==='ar'?'en':'ar')};
 document.getElementById('pr').onclick=function(){window.print()};
-lab();var sv=null;try{sv=localStorage.getItem('lang')}catch(e){}
-if(sv==='en')setLang('en');
+lab();
 })();
 </script>
 </body>
